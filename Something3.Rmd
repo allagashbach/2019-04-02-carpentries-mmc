@@ -1,0 +1,39 @@
+---
+title: "Something3"
+author: "D Clark"
+date: "4/2/2019"
+output:
+  html_document:
+    df_print: paged
+bibliography: "library.bib"
+---
+
+```{r}
+n_countries=90
+years=c(1950,2010)
+
+```
+
+
+[@Rosling2011]
+
+The data consist of `r n_countries` unique countries tracked from `r years[1]` to `r years[2]`
+
+```{r echo=TRUE, message=FALSE}
+library(here)
+library(skimr)
+library(tidyverse)
+library(pander)
+library(stargazer)
+library(beepr)
+d<-readr::read_csv(here("data/gapminder/raw/gapminder_data.csv"))
+pander(summary(d))
+
+```
+
+## R Markdown
+
+Here is some text.
+
+##References
+
